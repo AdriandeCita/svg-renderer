@@ -1,6 +1,15 @@
+var path = require('path');
+
 module.exports = {
-    entry: './src/main.js',
+    entry: './src/index.js',
     output: {
-        filename: 'build/bundle.js'
+        path: path.join(__dirname, 'build'),
+        publicPath: '/build/',
+        filename: 'bundle.js'
+    },
+    module: {
+        loaders: [
+            { test: /.ts$/, loader: 'awesome-typescript-loader' }
+        ]
     }
 };
